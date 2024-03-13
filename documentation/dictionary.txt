@@ -1,0 +1,13 @@
+A dictionary in Python is made up of key-value pairs.
+
+There are two was to create dictionary in python
+	- using {} 
+	- using dict class
+
+	example for the first approach
+	var mydict = {}
+
+	example for the second appraoch
+	var mydict = dict()
+	
+	

@@ -1,0 +1,56 @@
+- Python is an object oriented programming language.
+- Almost everything in Python is an object, with its properties and methods.
+- A Class is like an object constructor, or a "blueprint" for creating objects.
+- Example:
+	class Person:
+	  def __init__(self, name, age):
+		self.name = name
+		self.age = age
+	p1 = Person("John", 36)
+	print(p1.name)
+	print(p1.age)
+- Access modifiers
+	-By default the member variables and methods are public
+	-No public keyword is required to make the class or methods and properties public
+	-Class properties and methods with private access modifier can only be accessed within the class where they are defined and cannot be accessed outside the class
+	-In Python private properties and methods are declared by adding a prefix with two underscores(‘__’) before their declaration.
+	-Ex
+		class BankAccount:
+			def __init__(self, account_number, balance):
+			  self.__account_number = account_number
+			  self.__balance = balance
+			
+			def __display_balance(self):
+			  print("Balance:", self.__balance)
+
+			b = BankAccount(1234567890, 5000)
+			b.__display_balance() 
+			
+		this gives the error
+			AttributeError: 'BankAccount' object has no attribute '__display_balance'
+	- Class properties and methods with protected access modifier can be accessed within the class and from the class that inherits the protected class.
+	- In python, protected members and methods are declared using single underscore(‘_’) as prefix before their names.
+	
+- Special methods of a class
+	- __repr__(self) : returns printable object of the class
+	- __str__ (self) : returns string representation of the class
+	- __add__ (self, other): 
+	- __sub__ (self, other):
+	- __mul__ (self, other):
+	- __truvdiv__(self, other):
+	- __pow__ (self, other):
+	
+- Specifal methods for container classes
+	- __len__(self)
+	- __getitem__(self, index)
+	- __setitem__(self, index)
+	- __contains__(self, index)
+	- __iter__(self, index)
+	- __next__(self, index)
+	
+- Binary
+	- __eq__
+	- __lt__
+	- __gt__
+	- __bool_ : used for if condition
+	

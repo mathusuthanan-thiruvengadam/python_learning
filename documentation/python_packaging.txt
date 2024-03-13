@@ -1,0 +1,74 @@
+making your own python module for distribution
+==============================================
+It has two steps
+  -	packaging
+  -	publishing
+
+
+Packaging
+=========
+  -	python packaging allows module-level organization of code that permits code reuse or distribution, 
+	modularity and abstraction
+  - it follows the following directory structure
+    package_name
+	|
+	|
+	|----__init__.py (mere presense of this file makes python to recognize this folder as a package)
+	|
+	|----module_file1.py (sample import statement will me "import package_name" or "from package_name import module_file1"
+	|
+	|----module_fileN.py 
+  - init.py 
+	  -	can be empty (or)
+	  -	can be used to define packages APIs
+		For example,
+			from .module_file1 import add #add is an API defined in module_file1.py
+			...
+			...
+		
+		
+publishing
+==========
+	step1: create publishing package
+		package_name
+		|
+		|----- setup.py (contains package metadata)
+		|
+		|----- setup.cfg (configuration file format used for storing settings)
+		|
+		|----- package_name (Folder created in the setup prevsiously)
+			|
+			|
+			|----__init__.py (mere presense of this file makes python to recognize this folder as a package)
+			|
+			|----module_file1.py (sample import statement will me "import package_name" or "from package_name import module_file1"
+			|
+			|----module_fileN.py 
+			
+			
+		the setup.py must contain 
+			from setuptools import setup, find_packages
+
+			setup(
+				name='package_name',
+				version='0.1',
+				packages=find_packages(),
+				install_requires=[
+					# Add any dependencies your package needs
+				],
+				author='Your Name',
+				author_email='your@email.com',
+				description='Description of your package',
+				long_description=open('README.md').read(),
+				long_description_content_type='text/markdown',
+				url='https://github.com/yourusername/package_name',
+				license='MIT',
+			)
+			
+	step : "pip install setuptools and twine" and "python setup.py sdist" from the folder path above
+	
+	step: "twine upload dist/*"
+	
+	step2: Open a PyPI Account
+	
+	step3. Publish your Package

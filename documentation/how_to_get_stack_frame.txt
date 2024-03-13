@@ -1,0 +1,15 @@
+to inspect the stack frame at any time in code using insepct lib
+
+def giveupthefunc():
+    frame = inspect.currentframe(1)
+    code  = frame.f_code
+    globs = frame.f_globals
+    functype = type(lambda: 0)
+    funcs = []
+    for func in gc.get_referrers(code):
+        if type(func) is functype:
+            if getattr(func, "__code__", None) is code:
+                if funcs:
+                    return None
+                funcs.append(func)
+    return funcs[0] if funcs else None

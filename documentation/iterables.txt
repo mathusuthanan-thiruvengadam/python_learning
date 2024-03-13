@@ -1,0 +1,13 @@
+Iterables are objects that can be iterated in iterations i.e which can be looped over or iterated over with the help of a for loop.
+	- Objects like lists, tuples, sets, dictionaries, strings, etc. are called iterables. In short and simpler terms, iterable is anything that you can loop over.
+	- In simpler words, iterable is a container that has data or values and we perform an iteration over it to get elements one by one. (Can traverse through all the given values one by one)
+	- Iterable has an in-built dunder method __iter__.
+
+Link: https://www.analyticsvidhya.com/blog/2021/07/everything-you-should-know-about-iterables-and-iterators-in-python-as-a-data-scientist/
+
+To get iterator from an iterable object iter() method is used
+	iterable object ------(iter())---------> iterator ------ (next())----> element
+
+List of ways to iterate an iterable
+	for <var> in <iterable object>
+	

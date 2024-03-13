@@ -1,0 +1,12 @@
+- List is a versatile datastructure
+- List is a list of elements of same or different data types
+- Each element in the list can be accessed using index surrounded by []
+- Common usecases
+	-	Data Storage and Manipulation: Lists are often used to store collections of data, such as numbers, strings, or other objects. They allow for easy access, modification, and traversal of the stored data.
+	-	Iterating Over Elements: Lists are frequently used in loops to iterate over each element in the list and perform operations on them. This is particularly useful when dealing with large datasets or when processing batches of items.
+	-	Data Structures: Lists can be used to implement various data structures such as stacks, queues, and linked lists. They offer dynamic resizing, making them suitable for scenarios where the size of the data structure may change over time.
+	-	Storing Results: Lists are commonly used to store the results of computations or operations performed in a program. For example, when processing data or performing calculations, the results can be stored in a list for later analysis or presentation.
+	-	Managing Collections: Lists are useful for managing collections of objects, such as a list of users, items in a shopping cart, or tasks in a to-do list. They allow for easy addition, removal, and modification of elements within the collection.
+	-	Sorting and Filtering: Lists support various methods for sorting and filtering elements based on specific criteria. This is useful when working with data that needs to be organized or filtered based on certain conditions.
+	-	Building Data Structures: Lists are often used as building blocks for more complex data structures. For example, lists of lists (nested lists) can be used to represent matrices, tables, or hierarchical data structures.
+	-	Implementing Algorithms: Lists are integral to many algorithms and programming tasks, such as searching, sorting, and graph traversal. They provide a convenient way to organize and manipulate data during algorithm execution.

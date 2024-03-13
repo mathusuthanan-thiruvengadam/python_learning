@@ -1,0 +1,9 @@
+latest: 3.12.2
+download link: 
+main page: https://www.python.org/doc/
+Standard libraries: https://docs.python.org/3.12/library/index.html
+Where python executables are stored: c:\users\Lenovo\AppData\Local\Programs\Python\Python312
+Where python packages are stored: C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\Lib
+List of paths added to PATH env variable:
+	- C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\Scripts\
+	- C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\

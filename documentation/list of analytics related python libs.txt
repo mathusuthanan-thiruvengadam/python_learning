@@ -1,0 +1,7 @@
+Numpy – Fundamental Scientific Computing
+Scipy– Fundamental Scientific Computing
+Pandas - Data Manipulation and Analysis
+MatplotLib -  Plotting and Visualization
+Scikit learn - Scikit-learn – Machine Learning and Data Mining
+StatsModels – Statistical Modeling, Testing, and Analysis
+Seaborn – For Statistical Data Visualization

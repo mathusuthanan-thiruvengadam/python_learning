@@ -1,0 +1,6 @@
+def my_function(*args, **kwargs):
+    print("Positional arguments (args):", args)
+    print("Keyword arguments (kwargs):", kwargs)
+
+# Mixing up positional and keyword arguments
+my_function(name='Alice', 1, 2, age=30)

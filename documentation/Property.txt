@@ -1,0 +1,32 @@
+In Python, the property() method is used to create properties in a class. Properties allow for the implementation of getter, setter, and deleter methods in a class, providing controlled access to attributes. They are a way to define attributes of an object that automatically execute code upon access, assignment, or deletion.
+
+Here's a basic example of how property() can be used:
+class Rectangle:
+    def __init__(self, width, height):
+        self._width = width
+        self._height = height
+
+    def get_width(self):
+        return self._width
+
+    def set_width(self, value):
+        if value <= 0:
+            raise ValueError("Width must be positive")
+        self._width = value
+
+    def get_height(self):
+        return self._height
+
+    def set_height(self, value):
+        if value <= 0:
+            raise ValueError("Height must be positive")
+        self._height = value
+
+    width = property(get_width, set_width)
+    height = property(get_height, set_height)
+
+# Usage
+rectangle = Rectangle(3, 4)
+print(rectangle.width)  # Accessing width property (getter)
+rectangle.width = 5      # Setting width property (setter)
+print(rectangle.width)  # Accessing width property again

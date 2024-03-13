@@ -1,0 +1,19 @@
+list of things that can not be done with python that is possible with C
+========================================================================
+  -	Python/C API
+	  -	This is the most direct way to integrate C code with Python. 
+	  -	It allows you to write C extension modules that can be imported and used like regular Python modules. 
+	  -	You can call C functions from Python and pass data between Python and C. 
+	  -	However, this method requires a good understanding of both C and Python.
+  -	Cython
+	  -	Python that compiles to C
+	  - write code that is almost pure Python, with only a few annotations to declare types
+	  -	code is then compiled to C and can be imported into Python like a regular module.
+  -	ctypes
+	  -	foreign function interface module in Python that allows you to call functions and use data types from shared libraries written in C
+
+
+
+Python/C API
+	cl /LD /Feexample.pyd /I"C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\include" /I"C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\include\internal" example.c /link /LIBPATH:"C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\libs" python312.lib
+

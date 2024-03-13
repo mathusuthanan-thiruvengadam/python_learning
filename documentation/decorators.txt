@@ -1,0 +1,22 @@
+Decorators are 
+	- a very powerful and useful tool in Python since it allows programmers to modify the behaviour of a function or class. 
+	- allow us to wrap another function in order to extend the behaviour of the wrapped function, without permanently modifying it
+
+Example:
+
+def my_decorator(func):
+    if callable(func):
+        def wrapper(*args, **kwargs):
+            print("Before calling function")
+            result = func(*args, **kwargs)
+            print("After calling function")
+            return result
+        return wrapper
+    else:
+        raise ValueError("Decorator must wrap a callable")
+
+@my_decorator
+def example_function():
+    print("Inside example function")
+
+example_function()

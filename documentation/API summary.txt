@@ -1,0 +1,38 @@
+callable() - In Python, callable() function is a built-in function that we can use to check if an object is callable in Python i.e., it can be called like a function.
+			 Sample real word scenarios: A function that registers for error handler, may need to validae if the given argument is a valid function that can be invoked when the error occurs
+classmethod - it is decorator that when declared, the member method of a class receives the classitself as the first object. It is simular to static method in c++
+				used to access a method of a class without creating the object
+decorators - used to add or wrap a function on a class method`
+				- classmethod
+delattr - used to remove a member variable to default value. Sampel scenario if a class represets a person's personal details and if user wants to hide the contact information
+bin () 	- used to get the binary representation of given object. If we want an object to give its bin representation, need to define __index__ method.
+abs () 	- used to get absolute value of given object. If we want an object to give its abs representation it has to implement __abs__ method
+str() 	- string implementation of given object. __str__ implementation returns print of an object
+			print(str(obj)). in case if need to be printed without str, we need to implement __repr__ method.
+dir() 	- list of methods supported by the object. To provide custom implementationn of an object implement __dir__ method.
+format() - format a value for printing. __format__ to provide custom implementation for formatting an user defined object`
+			__format__(self, format_spec)
+global() - 
+hash() - To calculate hash value of any object. If we want to implement custom hash function __hash__ in the object
+type() - Returns the object type
+input() - is used to get input from user. input is a string
+isinstance() - to determine if the given object is of given type
+issubclass() - to determine if the given class is subclass of given
+iter() - Returns iterator of the given object. It must implement either __iter__ or __getitem__ method
+		Type "help", "copyright", "credits" or "license" for more information.
+		>>> x = 10
+		>>> itr = iter(x)
+		Traceback (most recent call last):
+		  File "<stdin>", line 1, in <module>
+		TypeError: 'int' object is not iterable
+map() - To apply a function through the iterable object and return the map as output
+max()/min() - Used to get maximum or minimum on given iterable object.
+				usage1: (Direct values like string or integer
+				max_number = max(numbers) / max_key = max(scores, key=scores.get) for dictionary
+				usage2: custom objects
+				oldest_person = max(people, key=lambda person: person.age)
+memoryview() - Gives the view how the object is stored in the memory
+ord() - Returns ascii value of given char. Opposite to chr
+
+				
+			

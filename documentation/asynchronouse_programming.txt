@@ -1,0 +1,119 @@
+https://sunscrapers.com/blog/python-async-programming-basics/
+
+Asyhchronous programming in python allows multiple tasks to execute concurrently without waiting for another task to finish its execution
+The primary goal is to reduce idle time by allowing the program to work on other tasks while certain operations, like I/O operations or network requests, are being processed.
+Two main components of async programming is 
+	- await: when you mark a function as async, it becomes a coroutine, indicating that it can be paused and resumed during its execution
+	- async:  await to call other coroutines and efficiently manage concurrent operations within a coroutine.
+	
+	
+Aspect						async																			await
+Function Type				Marks a function as a coroutine.												Used inside a coroutine to call other coroutines.
+Execution Control			The coroutine can be paused and resumed during execution.						Pauses the current coroutine, allowing other tasks to run.
+Purpose						Essential for asynchronous programming.											Used to wait for the completion of asynchronous operations.
+Event Loop					Allows the event loop to switch to other tasks while waiting for operations.	Enables the event loop to execute other tasks during waiting.
+Concurrency Management		Enables the efficient management of concurrent processes.						Facilitates handling asynchronous operations seamlessly.
+Usage in Code				Indicates that a function can be asynchronous.									Used within a coroutine to manage
+
+
+
+Common scenarios
+WebScrapping
+Networking
+Real time applications
+Database operations
+
+
+usage
+
+await <function_name>()
+
+	- The function_name represents an asynchronous operation, such as a networking operation, file I/O, or database query.
+	- it says pause the execution (don't proceed with the line next to await <function_name>()) until the function_name() finishes
+		or
+	- It instructs the program to pause execution at this point and wait for the asynchronous operation represented by function_name() to complete.
+	
+	Impact with and without await
+	=============================
+	async def read_from_file(filename):
+    print("Opening file...")
+    async with aiofiles.open(filename, mode='r') as file:
+        data = await file.read()
+        print("Data read from file:", data)
+        return data
+
+	async def main():
+		data = await read_from_file("example.txt")
+		print("Data received:", data)
+
+	await main()
+
+	Impact with and with await
+	==========================
+	async def main():
+		data = read_from_file("example.txt")  # Removed 'await' keyword
+		print("Data received:", data)
+		
+	await main()
+	
+	when read_from_file is called without await, it returns the coroutine object instead of data returned from file
+	
+
+
+Impact of having async and not having async
+============================================
+
+	case1:
+	======
+	def read_from_file(filename):
+    print("Opening file...")
+    with open(filename, mode='r') as file:  # Using synchronous file I/O
+        data = file.read()
+        print("Data read from file:", data)
+        return data
+
+	def additional_operation():
+		print("Performing additional operation...")
+
+	def main():
+		data = read_from_file("example.txt")  # Synchronous file reading
+		additional_operation()  # Perform additional operation
+		print("Data received:", data)
+
+	main()  # Call main function synchronously
+	
+	#output
+	Data read from file: <data>
+	Performing additional operation...
+
+	case2:
+	======
+	import asyncio
+
+	async def read_from_file(filename):
+		print("Opening file...")
+		async with aiofiles.open(filename, mode='r') as file:  # Using asynchronous file I/O
+			data = await file.read()
+			print("Data read from file:", data)
+			return data
+
+	async def additional_operation():
+		print("Performing additional operation...")
+
+	async def main():
+		data_task = read_from_file("example.txt")  # Asynchronous file reading
+		operation_task = additional_operation()  # Asynchronous additional operation
+
+		await asyncio.gather(data_task, operation_task)  # Concurrently wait for both tasks
+
+		print("Data received:", await data_task)
+
+	await main()  # Call main function asynchronously
+
+	
+	#output
+	Performing additional operation...
+	Data read from file:
+	
+	
+	

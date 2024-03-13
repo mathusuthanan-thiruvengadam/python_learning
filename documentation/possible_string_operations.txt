@@ -1,0 +1,21 @@
+Possible string operations in python
+finding size
+converting all to captial
+converting all to small case
+reverse
+checking if given substring presents
+replace a substring with another
+removing all substring
+flip the case
+getting the number of occurances of a substring in a string
+if given string ends with a string
+finding if a pattern exists in a string
+checking if given string is number
+checking if given string is non number
+checking if given string has any specicia chars
+checking if all are upper case
+checking if all are lower case
+dividing the string into two
+removing leading chars
+removing trailing chars
+replacing a string with translated string

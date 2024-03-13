@@ -1,0 +1,21 @@
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def __bool__(self):
+        return self.value > 0
+
+# Creating objects of MyClass
+obj1 = MyClass(5)
+obj2 = MyClass(0)
+
+# Using objects in boolean contexts
+if obj1:
+    print("obj1 is True")
+else:
+    print("obj1 is False")
+
+if obj2:
+    print("obj2 is True")
+else:
+    print("obj2 is False")

@@ -1,0 +1,5 @@
+debugging in python
+===================
+invoking python debugging from command prompt while starting the progam
+C:\working\python\samplecode>python -m pdb binonobject.py
+

@@ -1,0 +1,56 @@
+- formating a string to print
+- syntax: format(value, format_spec)
+- Return value is string
+- Examples of format spec:
+	The format() function in Python is used to format the specified value according to the format_spec passed as the second argument. The format_spec is a string that specifies the formatting rules, such as padding, alignment, and precision.
+
+	Here's an example demonstrating the usage of the format() function:
+
+	python
+	Copy code
+	value = 123.456789
+
+	# Format value as a fixed-point number with 2 decimal places
+	formatted_value = format(value, '.2f')
+	print(formatted_value)  # Output: 123.46
+
+	# Format value as an exponential notation with 3 decimal places
+	formatted_value = format(value, '.3e')
+	print(formatted_value)  # Output: 1.235e+02
+
+	# Format value with a specified width and fill with leading zeros
+	formatted_value = format(value, '010.2f')
+	print(formatted_value)  # Output: 0000123.46
+
+	# Format value as a percentage with 1 decimal place
+	formatted_value = format(value, '.1%')
+	print(formatted_value)  # Output: 12345.7%
+
+	# Format value as a string with a specified width and center alignment
+	formatted_value = format('Hello', '^10')
+	print(formatted_value)  # Output:   Hello   
+	
+How to give custom formating
+	class MyClass:
+		def __init__(self, value):
+			self.value = value
+
+		def __format__(self, format_spec):
+			if format_spec == 'r':  # Custom format for 'r' specifier
+				return f"Reversed: {self.value[::-1]}"
+			elif format_spec == 'u':  # Custom format for 'u' specifier
+				return f"Uppercase: {self.value.upper()}"
+			else:
+				return str(self.value)  # Default formatting
+
+	# Create an instance of MyClass
+	obj = MyClass("hello")
+
+	# Custom formatting using 'r' specifier
+	print(format(obj, 'r'))  # Output: Reversed: olleh
+
+	# Custom formatting using 'u' specifier
+	print(format(obj, 'u'))  # Output: Uppercase: HELLO
+
+	# Default formatting
+	print(format(obj))  # Output: hello

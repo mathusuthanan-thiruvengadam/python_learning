@@ -1,0 +1,68 @@
+Working with CSVs
+============================================================================================================
+Simple reading. example
+
+	import csv
+	with open('Giants.csv', mode ='r')as file:
+	  csvFile = csv.reader(file)
+	  for lines in csvFile:
+			print(lines)
+
+	['Organization', 'CEO', 'Established']
+	['Alphabet', 'Sundar Pichai', '02-Oct-15']
+	['Microsoft', 'Satya Nadella', '04-Apr-75']
+	['Amazon', 'Jeff Bezos', '05-Jul-94']
+	
+note:
+	- each row is a list. each column is an item in the list
+
+simple write example
+
+	import csv
+	data = [['Geeks for Geeks', '2008', 'Sandeep Jain'],
+			['HackerRank', '2009', 'Vivek Ravisankar']]
+	file = open('g4g.csv', 'a+', newline ='')
+	with file:    
+		write = csv.writer(file)
+		write.writerows(data)
+============================================================================================================
+Reading using dictionary
+	 
+	from csv import DictReader
+	# open file in read mode
+	with open("geeks.csv", 'r') as f:
+		dict_reader = DictReader(f)
+		list_of_dict = list(dict_reader)
+		print(list_of_dict)
+
+
+Writing using dictionary
+ 
+	# importing the csv module  
+	import csv  
+		
+	# my data rows as dictionary objects  
+	mydict =[{'branch': 'COE', 'cgpa': '9.0', 'name': 'Nikhil', 'year': '2'},  
+			 {'branch': 'COE', 'cgpa': '9.1', 'name': 'Sanchit', 'year': '2'},  
+			 {'branch': 'IT', 'cgpa': '9.3', 'name': 'Aditya', 'year': '2'},  
+			 {'branch': 'SE', 'cgpa': '9.5', 'name': 'Sagar', 'year': '1'},  
+			 {'branch': 'MCE', 'cgpa': '7.8', 'name': 'Prateek', 'year': '3'},  
+			 {'branch': 'EP', 'cgpa': '9.1', 'name': 'Sahil', 'year': '2'}]  
+		
+	# field names  
+	fields = ['name', 'branch', 'year', 'cgpa']  
+		
+	# name of csv file  
+	filename = "university_records.csv"
+		
+	# writing to csv file  
+	with open(filename, 'w') as csvfile:  
+		# creating a csv dict writer object  
+		writer = csv.DictWriter(csvfile, fieldnames = fields)  
+			
+		# writing headers (field names)  
+		writer.writeheader()  
+			
+		# writing data rows  
+		writer.writerows(mydict)  
+============================================================================================================
